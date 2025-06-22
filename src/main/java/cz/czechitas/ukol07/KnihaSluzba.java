@@ -30,4 +30,21 @@ public class KnihaSluzba {
     public List<Kniha> getKnihy() {
         return knihy;
     }
+
+    public List<Kniha> getKnihyOdZadanehoAutora(String autor) {
+        return knihy.stream()
+                .filter(kniha -> kniha.getAutor()
+                        .equalsIgnoreCase(autor)) //ošetření malá velká písmena
+                .toList(); //vrátíme zpět na List
+
+    }
+
+    public List<Kniha> getKnihyZRoku(int rok) {
+        return knihy.stream()
+                .filter(kniha -> kniha.getRokVydani() == rok)
+                .toList();
+    }
+
+
+
 }
