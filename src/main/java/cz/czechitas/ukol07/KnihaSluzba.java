@@ -16,11 +16,18 @@ public class KnihaSluzba {
     private List<Kniha> knihy;
 
 
-    public KnihaSluzba(){
-        try(InputStream inputStream = KnihaSluzba.class.getResourceAsStream("knihy.json")) { //načte soubory z knihy.json
+    public KnihaSluzba() {
+        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("knihy.json")) { //načte soubory z knihy.json
             ObjectMapper objectMapper = new ObjectMapper();
-            knihy = objectMapper.readValue(inputStream, new TypeReference<List<Kniha>>() {});  //načtení knih
-
+            knihy = objectMapper.readValue(inputStream, new TypeReference<List<Kniha>>() {
+            });  //načtení knih
+        } catch (IOException e) {  //ošetření výjimky
+            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    public List<Kniha> getKnihy() {
+        return knihy;
     }
 }
