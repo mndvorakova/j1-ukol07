@@ -17,12 +17,11 @@ public class KnihaSluzba {
 
 
     public KnihaSluzba() {
-        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("knihy.json")) { //načte soubory z knihy.json
+        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("/cz/czechitas/ukol07/knihy.json")) {
             ObjectMapper objectMapper = new ObjectMapper();
-            knihy = objectMapper.readValue(inputStream, new TypeReference<List<Kniha>>() {
-            });  //načtení knih
-        } catch (IOException e) {  //ošetření výjimky
-            System.err.println(e.getMessage());
+            knihy = objectMapper.readValue(inputStream, new TypeReference<List<Kniha>>() {});
+        } catch (IOException | NullPointerException e) {
+            System.err.println("Chyba při načítání knih: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -44,7 +43,6 @@ public class KnihaSluzba {
                 .filter(kniha -> kniha.getRokVydani() == rok)
                 .toList();
     }
-
 
 
 }
