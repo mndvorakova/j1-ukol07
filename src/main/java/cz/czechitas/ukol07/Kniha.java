@@ -28,4 +28,11 @@ public class Kniha {
     public void setRokVydani(int rokVydani) {
         this.rokVydani = rokVydani;
     }
+
+    @Override
+    public String toString() {
+        return autor + ": " + nazev + "("+ rokVydani + ") " + rokVydani;
+    }
 }
+
+
