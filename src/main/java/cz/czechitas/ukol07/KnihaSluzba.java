@@ -44,5 +44,11 @@ public class KnihaSluzba {
                 .toList();
     }
 
+    public List<Kniha> getKnihyPodleNazvu(String nazev) {
+        return knihy.stream()
+                .filter(kniha -> kniha.getNazev().equalsIgnoreCase(nazev))
+                .toList();
+
+    }
 
 }

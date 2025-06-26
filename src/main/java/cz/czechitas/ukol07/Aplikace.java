@@ -22,6 +22,12 @@ public class Aplikace {
             System.out.println(kniha.getAutor() + ": " + kniha.getNazev());
         }
 
+        System.out.println("Knihy podle názvu: R.U.R. ");
+        List<Kniha> knihyPodleNazvu = sluzba.getKnihyPodleNazvu("R.U.R.");
+        for (Kniha kniha : knihyPodleNazvu) {
+            System.out.println(kniha.getAutor() + ": " + kniha.getNazev());
+        }
+
     }
 
 }
