@@ -27,7 +27,7 @@ public class KnihaSluzbaTest {
 
     @Test
     void knihaPouzeJedna(){
-        List<Kniha> knihy = sluzba.getKnihyPodleNazvu("R.U.R.");
+        List<Kniha> knihy = sluzba.getKnihyPodleNazvu("R. U. R.");
         assertEquals(1, knihy.size(), "R.U.R. skladem 1 kus");
     }
 
