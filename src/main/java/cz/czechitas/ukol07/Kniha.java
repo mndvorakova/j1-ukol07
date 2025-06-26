@@ -1,5 +1,7 @@
 package cz.czechitas.ukol07;
 
+
+
 public class Kniha {
     private String autor;
     private String nazev;

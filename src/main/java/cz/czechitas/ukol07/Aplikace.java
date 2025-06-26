@@ -19,7 +19,7 @@ public class Aplikace {
         System.out.println("Knihy vydané roku 1845: ");
         List<Kniha> knihy1845 = sluzba.getKnihyZRoku(1845);
         for (Kniha kniha : knihy1845) {
-            System.out.println(knihy1845.get(0).getAutor() + ": " + kniha.getNazev());
+            System.out.println(kniha.getAutor() + ": " + kniha.getNazev());
         }
 
     }
